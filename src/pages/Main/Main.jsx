@@ -11,6 +11,13 @@ function Main() {
             </h1>
             <ul className="main__cards-list">
                 <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
             </ul>
         </main>
     );

@@ -11,17 +11,17 @@ function Card({ img }) {
                 <h3 className="card__name">
                     Чизбургер-пицца
                 </h3>
-                <div className="card__options">
-                    <ul className="card__options-top">
-                        <li className="card__options-top-item">
+                <div className="card__options-wrap">
+                    <ul className="card__options">
+                        <li className="card__options-top-item card__option-active">
                             Тонкое
                         </li>
                         <li className="card__options-top-item">
                             Традиционное
                         </li>
                     </ul>
-                    <ul className="card__options-bottom">
-                        <li className="card__options-bottom-item">
+                    <ul className="card__options">
+                        <li className="card__options-bottom-item card__option-active">
                             26 см.
                         </li>
                         <li className="card__options-bottom-item">
@@ -40,7 +40,6 @@ function Card({ img }) {
                         <img
                             className="card__price-add-btn-plus-img"
                             src={plusImg} alt="Добавить в корзину"
-                            ariaLabel="Добавить в корзину"
                         />
                         Добавить
                         <span className="card__price-add-btn-amount">

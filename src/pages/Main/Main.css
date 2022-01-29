@@ -1,6 +1,10 @@
 .main {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
     width: 100%;
-    padding: 0;
+    padding: 0 0 42px 0;
     margin: 0;
     box-sizing: border-box;
 }
@@ -14,9 +18,10 @@
 }
 
 .main__cards-list {
+    width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(1fr, 300px));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 10px;
-    padding: 30px 0;
+    padding: 0;
     margin: 0;
 }
