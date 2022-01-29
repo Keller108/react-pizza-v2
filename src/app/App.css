@@ -1,0 +1,15 @@
+.app-wrapper {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 55px;
+  background-color: #FFDF8C;
+  min-height: 100vh;
+}
+
+.app {
+  padding: 30px 50px;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: white;
+  border-radius: 10px;
+}
