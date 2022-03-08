@@ -1,5 +1,6 @@
+//@ts-ignore
+import triangleIcon from '../../img/triangle-icon.svg';
 import './Filter.css';
-import triangleIcon from '../../img/triangle-icon.svg'
 
 function Filter() {
     return (

@@ -1,5 +1,6 @@
-import { Link } from 'react-router-dom';
+//@ts-ignore
 import logoImg from '../../img/header-logo.svg';
+//@ts-ignore
 import drawerImg from '../../img/basket-icon.svg';
 import './Header.css';
 

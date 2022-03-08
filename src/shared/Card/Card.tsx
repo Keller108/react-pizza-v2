@@ -1,9 +1,11 @@
-import Filter from '../../features/Filter/Filter';
-import './Card.css';
+//@ts-ignore
 import plusImg from '../../img/plus-icon.svg';
+//@ts-ignore
 import pizzaImg from '../../img/pizza/pizza-1.png';
 
-function Card({ img }) {
+import './Card.css';
+
+function Card() {
     return (
         <div className="card">
             <img className="card__img" src={pizzaImg} alt="Пица" />
