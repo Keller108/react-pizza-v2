@@ -39,6 +39,7 @@
 }
 
 .filter__dropdown {
+    position: relative;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -63,4 +64,34 @@
     color: #FE5F1E;
     border-bottom: 1px dashed #FE5F1E;
     cursor: pointer;
+}
+
+.dropdown-sort {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    z-index: 3;
+    padding: 10px 0;
+    margin: 0;
+    max-width: 132px;
+    height: auto;
+    list-style-type: none;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.09);
+}
+
+.dropdown-sort__item {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 1;
+    color: #000;
+    padding: 14px 10px;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.dropdown-sort__item_active {
+    background-color: rgba(254, 95, 30, .05) ;
+    color: #FE5F1E;
+    font-weight: bold;
 }

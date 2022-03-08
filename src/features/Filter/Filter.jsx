@@ -24,6 +24,17 @@ function Filter() {
             <div className="filter__dropdown">
                 <img className="filter__triangle-icon" src={triangleIcon} alt="Иконка фильтра"/>
                 Сортировка по:&nbsp;<span className="filter__picked-item transparent-link">популярности</span>
+                <ul className="dropdown-sort">
+                    <li className='dropdown-sort__item dropdown-sort__item_active'>
+                        популярности
+                    </li>
+                    <li className='dropdown-sort__item'>
+                        цене
+                    </li>
+                    <li className='dropdown-sort__item'>
+                        алфавиту
+                    </li>
+                </ul>
             </div>
         </div>
     );
