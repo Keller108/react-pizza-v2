@@ -1,5 +1,5 @@
 import Header from '../shared/Header/Header';
-import Main from '../pages/Main/Main';
+import { Main } from '../pages/Main/Main';
 import './App.css';
 
 function App() {

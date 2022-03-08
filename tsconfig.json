@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
         "outDir": "build/dist",
-        "module": "commonjs",
+        "module": "es6",
         "target": "es5",
         "lib": ["es6", "dom"],
         "sourceMap": true,
@@ -12,9 +12,13 @@
         "noImplicitReturns": true,
         "noImplicitThis": true,
         "noImplicitAny": true,
-        "strictNullChecks": true
+        "strictNullChecks": true,
+        "resolveJsonModule": true,
+        "allowSyntheticDefaultImports": true
     },
-      "include": ["src/**/*.ts", "tests/**/*.ts"],
+    "include": [
+        "src/**/*"
+    ],
     "exclude": [
         "node_modules",
         "build",
