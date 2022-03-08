@@ -1,24 +1,24 @@
 import { observable, makeObservable, action } from 'mobx';
 
 export class FilterStore {
-    sortIsOpen: boolean;
+    globalFilter: string;
     sortValue: string;
 
     constructor() {
-        this.sortIsOpen = false;
+        this.globalFilter = 'Все';
         this.sortValue = 'популярности';
 
         makeObservable(this, {
-            sortIsOpen: observable,
+            globalFilter: observable,
             sortValue: observable,
 
-            openDropdownSort: action,
+            setGlobalFilter: action,
             setSortValue: action,
         })
     }
 
-    openDropdownSort() {
-        this.sortIsOpen = !this.sortIsOpen;
+    setGlobalFilter(option: string) {
+        this.globalFilter = option;
     }
 
     setSortValue(value: string) {
