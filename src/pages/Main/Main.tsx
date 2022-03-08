@@ -4,7 +4,6 @@ import Card from '../../shared/Card/Card';
 import { FilterContext } from '../../processes/filterProcess';
 import './Main.css';
 
-//@ts-ignore
 export function Main() {
     const { filterStore } = useContext(FilterContext);
 
