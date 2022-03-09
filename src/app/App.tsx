@@ -1,15 +1,24 @@
+import {
+    BrowserRouter,
+    Routes,
+    Route
+  } from "react-router-dom";
 import Header from '../shared/Header/Header';
 import { Main } from '../pages/Main/Main';
 import './App.css';
 
 function App() {
     return (
-        <div className="app-wrapper">
-            <div className="app">
-                <Header />
-                <Main />
+        <BrowserRouter>
+            <div className="app-wrapper">
+                <div className="app">
+                    <Header />
+                    <Routes>
+                        <Route path="/" element={<Main />} />
+                    </Routes>
+                </div>
             </div>
-        </div>
+        </BrowserRouter>
     );
 }
 
