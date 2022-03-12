@@ -1,8 +1,9 @@
 import { useContext } from 'react';
 import { Filter } from '../../features/Filter/Filter';
 import Card from '../../shared/Card/Card';
-import { FilterContext } from '../../processes/filterProcess';
+import { FilterContext } from '../../processes/FilterProcess';
 import './Main.css';
+import { cardsList } from '../../shared/Card/const/cardsList';
 
 export function Main() {
     const { filterStore } = useContext(FilterContext);
@@ -16,14 +17,7 @@ export function Main() {
                 Все пиццы
             </h1>
             <ul className="main__cards-list">
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
+                {cardsList.map(item => <Card key={item.title} img={item.img} title={item.title} minPrice={item.minPrice} />)}
             </ul>
         </main>
     );

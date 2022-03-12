@@ -1,24 +1,51 @@
+import { observer } from 'mobx-react-lite';
+import { useEffect, useState } from 'react';
 //@ts-ignore
 import plusImg from '../../img/plus-icon.svg';
-//@ts-ignore
-import pizzaImg from '../../img/pizza/pizza-1.png';
-
 import './Card.css';
+import { CardStore } from './store/CardStore';
 
-function Card() {
+const store = new CardStore();
+
+interface ICardProps {
+    img: any;
+    title: string;
+    minPrice: number;
+}
+
+const Card = observer(({img, title, minPrice}:ICardProps) => {
+    const [isDough, setIsDough] = useState(store.dough);
+
+    const setDough = (e: any) => {
+        // setIsDough('Тонкое');
+        store.setDoughSize(e.target.textContent);
+    };
+
+    const setTraditionalDough = () => {
+        setIsDough('Традиционное');
+    };
+
+    useEffect(() => {
+        // store.setDoughSize(isDough);
+        console.log(store.dough);
+    }, [store.dough])
+
+    let doughStyle = store.dough;
+
+    console.log(doughStyle);
     return (
         <div className="card">
-            <img className="card__img" src={pizzaImg} alt="Пица" />
+            <img className="card__img" src={img} alt={title} />
             <div className="card__content-wrap">
                 <h3 className="card__name">
-                    Чизбургер-пицца
+                    {title}
                 </h3>
                 <div className="card__options-wrap">
                     <ul className="card__options">
-                        <li className="card__options-top-item card__option-active">
+                        <li onClick={setDough} className="card__options-top-item card__option-active">
                             Тонкое
                         </li>
-                        <li className="card__options-top-item">
+                        <li onClick={setDough} className="card__options-top-item">
                             Традиционное
                         </li>
                     </ul>
@@ -36,7 +63,7 @@ function Card() {
                 </div>
                 <div className="card__price-wrap">
                     <p className="card__price">
-                        от 380 ₽
+                        от {minPrice} ₽
                     </p>
                     <button className="card__price-add-btn">
                         <img
@@ -45,13 +72,13 @@ function Card() {
                         />
                         Добавить
                         <span className="card__price-add-btn-amount">
-                            2
+                            0
                         </span>
                     </button>
                 </div>
             </div>
         </div>
     );
-}
+});
 
 export default Card;
