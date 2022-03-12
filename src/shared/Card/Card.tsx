@@ -1,11 +1,10 @@
-import { observer } from 'mobx-react-lite';
 import { useEffect, useState } from 'react';
+import { observer } from 'mobx-react-lite';
+
+import './Card.css';
 //@ts-ignore
 import plusImg from '../../img/plus-icon.svg';
-import './Card.css';
 import { CardStore } from './store/CardStore';
-
-const store = new CardStore();
 
 interface ICardProps {
     img: any;
@@ -14,25 +13,38 @@ interface ICardProps {
 }
 
 const Card = observer(({img, title, minPrice}:ICardProps) => {
+    const store = new CardStore();
+
     const [isDough, setIsDough] = useState(store.dough);
+    const [pizzaSize, setPizzaSize] = useState(store.size);
+    const [pizzaQuantity, setPizzaQuantity] = useState(store.count);
 
     const setDough = (e: any) => {
-        // setIsDough('Тонкое');
-        store.setDoughSize(e.target.textContent);
+        setIsDough(e.target.textContent);
     };
 
-    const setTraditionalDough = () => {
-        setIsDough('Традиционное');
+    const setSize = (e: any) => {
+        setPizzaSize(e.target.textContent);
+    };
+
+    const addOneToCart = () => {
+        setPizzaQuantity(pizzaQuantity + 1);
     };
 
     useEffect(() => {
-        // store.setDoughSize(isDough);
-        console.log(store.dough);
-    }, [store.dough])
+        store.setDoughSize(isDough);
+        console.log(isDough);
+    }, [isDough]);
 
-    let doughStyle = store.dough;
+    useEffect(() => {
+        store.setSize(pizzaSize);
+        console.log(pizzaSize);
+    }, [pizzaSize]);
 
-    console.log(doughStyle);
+    useEffect(() => {
+        store.addOne(pizzaQuantity);
+    }, [pizzaQuantity]);
+
     return (
         <div className="card">
             <img className="card__img" src={img} alt={title} />
@@ -42,21 +54,35 @@ const Card = observer(({img, title, minPrice}:ICardProps) => {
                 </h3>
                 <div className="card__options-wrap">
                     <ul className="card__options">
-                        <li onClick={setDough} className="card__options-top-item card__option-active">
+                        <li
+                            onClick={setDough}
+                            className={isDough === 'Тонкое'
+                            ? 'card__options-top-item card__option-active'
+                                : 'card__options-top-item'}>
                             Тонкое
                         </li>
-                        <li onClick={setDough} className="card__options-top-item">
-                            Традиционное
+                        <li
+                            onClick={setDough}
+                            className={isDough === 'Традиционное'
+                                ? 'card__options-top-item card__option-active'
+                                    : 'card__options-top-item'}>
+                                Традиционное
                         </li>
                     </ul>
                     <ul className="card__options">
-                        <li className="card__options-bottom-item card__option-active">
+                        <li onClick={setSize} className={pizzaSize === '26 см.'
+                                ? 'card__options-bottom-item card__option-active'
+                                    : 'card__options-bottom-item'}>
                             26 см.
                         </li>
-                        <li className="card__options-bottom-item">
+                        <li onClick={setSize} className={pizzaSize === '30 см.'
+                                ? 'card__options-bottom-item card__option-active'
+                                    : 'card__options-bottom-item'}>
                             30 см.
                         </li>
-                        <li className="card__options-bottom-item">
+                        <li onClick={setSize} className={pizzaSize === '40 см.'
+                                ? 'card__options-bottom-item card__option-active'
+                                    : 'card__options-bottom-item'}>
                             40 см.
                         </li>
                     </ul>
@@ -65,14 +91,14 @@ const Card = observer(({img, title, minPrice}:ICardProps) => {
                     <p className="card__price">
                         от {minPrice} ₽
                     </p>
-                    <button className="card__price-add-btn">
+                    <button onClick={addOneToCart} className="card__price-add-btn">
                         <img
                             className="card__price-add-btn-plus-img"
                             src={plusImg} alt="Добавить в корзину"
                         />
                         Добавить
                         <span className="card__price-add-btn-amount">
-                            0
+                            {pizzaQuantity}
                         </span>
                     </button>
                 </div>

@@ -2,12 +2,12 @@ import { makeObservable, action, observable } from "mobx";
 
 export class CardStore {
     dough: string;
-    size: number;
+    size: string;
     count: number;
 
     constructor() {
         this.dough = 'Тонкое';
-        this.size = 26;
+        this.size = '26 см.';
         this.count = 0;
 
         makeObservable(this, {
@@ -25,11 +25,11 @@ export class CardStore {
         this.dough = value;
     }
 
-    setSize(size: number) {
+    setSize(size: string) {
         this.size = size;
     }
 
-    addOne() {
-        this.count = this.count + 1;
+    addOne(value: number) {
+        this.count = value;
     }
 }
