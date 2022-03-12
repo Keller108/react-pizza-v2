@@ -1,0 +1,103 @@
+.cart-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 25px 0;
+    border-top: 1px solid #f4f4f4;
+}
+
+.cart-item__pic {
+    margin: 0;
+    margin-right: 15px;
+}
+
+.cart-item__content-wrapper {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.cart-item__title-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.cart-item__title {
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.cart-item__product-description {
+    font-size: 18px;
+    font-weight: normal;
+    color: #8d8d8d;
+    margin: 0;
+}
+
+.cart-item__price-wrapper {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cart-item__action-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.cart-item__action-btn {
+    width: 32px;
+    height: 32px;
+    outline: none;
+    border: none;
+    background-image: unset;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    background-color: rgba(0,0,0,0);
+}
+
+.cart-item__action-btn_type_minus {
+    background-image: url("../../img/cart__minus-btn.svg");
+}
+
+.cart-item__action-btn_type_plus {
+    background-image: url("../../img/cart__plus-btn.svg");
+}
+
+.cart-item__action-btn_type_remove {
+    background-image: url("../../img/cart__remove-btn.svg");
+}
+
+.cart-item__amount {
+    font-size: 22px;
+    line-height: 1;
+    font-weight: bold;
+    color: black;
+    margin: 0 10px;
+}
+
+.cart-item__price {
+    font-size: 22px;
+    line-height: 1;
+    font-weight: bold;
+    color: black;
+}
