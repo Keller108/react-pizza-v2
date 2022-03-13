@@ -1,6 +1,4 @@
 import './CartItem.css';
-//@ts-ignore
-import imgPath from '../../img/cart-item_1.svg';
 
 export function CartItem({ img, title, price }: any) {
     return (
