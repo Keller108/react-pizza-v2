@@ -4,10 +4,10 @@ import logoImg from '../../img/header-logo.svg';
 //@ts-ignore
 import drawerImg from '../../img/basket-icon.svg';
 import './Header.css';
+import { observer } from 'mobx-react-lite';
 
-function Header() {
+const Header = observer(({ total, quantity }: any) => {
     const location = useLocation();
-
     let header: any = [];
 
     if (location.pathname === '/') {
@@ -25,15 +25,15 @@ function Header() {
             {header}
             <Link to="/cart" className="header__drawer-wrapper transparent-link">
                 <div className="header__text-amount">
-                    520 ₽
+                    {total} ₽
                 </div>
                 <img className="header__drawer-img" src={drawerImg} alt="Корзина" />
                 <div className="header__text-amount">
-                    3
+                    {quantity}
                 </div>
             </Link>
         </header>
     );
-}
+});
 
 export default Header;

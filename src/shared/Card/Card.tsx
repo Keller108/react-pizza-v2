@@ -5,14 +5,16 @@ import './Card.css';
 //@ts-ignore
 import plusImg from '../../img/plus-icon.svg';
 import { CardStore } from './store/CardStore';
+import { CartStore } from '../../pages/Cart/store/CartStore';
 
 interface ICardProps {
     img: any;
     title: string;
     minPrice: number;
+    cartStore: CartStore;
 }
 
-const Card = observer(({img, title, minPrice}:ICardProps) => {
+const Card = observer(({img, title, minPrice, cartStore}:ICardProps) => {
     const store = new CardStore();
 
     const [isDough, setIsDough] = useState(store.dough);
@@ -29,16 +31,16 @@ const Card = observer(({img, title, minPrice}:ICardProps) => {
 
     const addOneToCart = () => {
         setPizzaQuantity(pizzaQuantity + 1);
+        cartStore.addToCart({ img, title, minPrice });
+        cartStore.refreshTotal(minPrice);
     };
 
     useEffect(() => {
         store.setDoughSize(isDough);
-        console.log(isDough);
     }, [isDough]);
 
     useEffect(() => {
         store.setSize(pizzaSize);
-        console.log(pizzaSize);
     }, [pizzaSize]);
 
     useEffect(() => {

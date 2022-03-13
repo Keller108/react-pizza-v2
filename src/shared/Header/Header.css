@@ -53,6 +53,7 @@
 .header__text-amount {
     padding-right: 0;
     margin-right: 0;
+    text-decoration: none;
 }
 
 .header__text-amount:first-of-type {
