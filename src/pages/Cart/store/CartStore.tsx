@@ -14,6 +14,7 @@ export class CartStore {
 
             addToCart: action,
             refreshTotal: action,
+            clearCart: action,
         })
     }
 
@@ -24,5 +25,10 @@ export class CartStore {
 
     refreshTotal(sum: number) {
         this.total = this.total + sum;
+    }
+
+    clearCart() {
+        this.cart = [];
+        this.total = 0;
     }
 }

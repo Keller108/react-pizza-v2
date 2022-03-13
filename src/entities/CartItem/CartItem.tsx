@@ -2,14 +2,14 @@ import './CartItem.css';
 //@ts-ignore
 import imgPath from '../../img/cart-item_1.svg';
 
-export function CartItem() {
+export function CartItem({ img, title, price }: any) {
     return (
         <li className="cart-item">
             <div className="cart-item__content-wrapper">
-                <img className="cart-item__pic" src={imgPath} alt="Товар в корзине"/>
+                <img className="cart-item__pic" src={img} alt="Товар в корзине"/>
                 <div className="cart-item__title-wrapper">
                     <h3 className='cart-item__title'>
-                        Пицца «Маргарита»
+                        {title}
                     </h3>
                     <p className="cart-item__product-description">
                             Тонкое тесто, 30 см
@@ -23,7 +23,7 @@ export function CartItem() {
                         aria-label="Decrement"
                         type="button"
                     />
-                    <p className="cart-item__amount">2</p>
+                    <p className="cart-item__amount">1</p>
                     <button
                         className="cart-item__action-btn cart-item__action-btn_type_plus"
                         aria-label="Decrement"
@@ -31,7 +31,7 @@ export function CartItem() {
                     />
                 </div>
                 <p className="cart-item__price">
-                    720 ₽
+                    {price} ₽
                 </p>
                 <button className="cart-item__action-btn cart-item__action-btn_type_remove" type="button" aria-label="Remove item"/>
             </div>

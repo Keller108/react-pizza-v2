@@ -6,9 +6,10 @@
 }
 
 .app {
-  padding: 30px 50px;
-  margin: 0;
-  box-sizing: border-box;
-  background-color: white;
-  border-radius: 10px;
+    min-height: calc(100vh - 110px);
+    padding: 30px 50px;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 10px;
 }

@@ -9,6 +9,8 @@
 }
 
 .cart-item__pic {
+    width: 82px;
+    height: 82px;
     margin: 0;
     margin-right: 15px;
 }
@@ -29,6 +31,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-align: left;
+    color: black;
 }
 
 .cart-item__title {

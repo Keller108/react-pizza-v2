@@ -29,6 +29,7 @@
     background-size: 26px;
     background-position: left center;
     background-repeat: no-repeat;
+    color: black;
 }
 
 .cart__empty-cart-btn {
@@ -53,6 +54,8 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    text-align: center;
+    color: #d1d1d1;
 }
 
 .cart__total-wrapper {
@@ -97,6 +100,7 @@
     line-height: 1;
     background-color: unset;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .cart__go-back-btn {

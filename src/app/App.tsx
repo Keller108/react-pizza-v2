@@ -24,7 +24,7 @@ const App = observer(() => {
                     <Header total={total} quantity={quantity} />
                     <Routes>
                         <Route path="/" element={<Main cartStore={cartStore}/>} />
-                        <Route path="/cart" element={<Cart />} />
+                        <Route path="/cart" element={<Cart cartStore={cartStore} />} />
                     </Routes>
                 </div>
             </div>
