@@ -1,0 +1,52 @@
+.empty-cart {
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.empty-cart__title {
+    font-size: 32px;
+    line-height: 1;
+    color: black;
+    text-align: center;
+    padding: 0;
+    padding-right: 35px;
+    background-image: url("../../../../img/smile-empty.png");
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: center right;
+    margin-bottom: 10px;
+}
+
+.empty-cart__description {
+    font-size: 18px;
+    line-height: 1.3;
+    color: #777;
+    margin-bottom: 20px;
+    text-align: center;
+    max-width: 400px;
+}
+
+.empty-cart__content-img {
+    width: 300px;
+    height: auto;
+    object-fit: cover;
+    font-size: 0;
+    margin-bottom: 20px;
+}
+
+.empty-cart__go-back-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 210px;
+    height: 46px;
+    text-align: center;
+    font-weight: normal;
+    color: white;
+    background-color: #282828;
+    text-decoration: none;
+    border-radius: 30px;
+}

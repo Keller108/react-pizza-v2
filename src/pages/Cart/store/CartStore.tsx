@@ -18,6 +18,15 @@ export class CartStore {
         })
     }
 
+    repetitionCheck(obj: {}) {
+        if (this.cart) {
+            let isRepeat = false;
+            this.cart.find(
+                //@ts-ignore
+                item => item.keys[0])
+        }
+    }
+
     addToCart({img, title, minPrice}: {img: any, title: string, minPrice: number}) {
         let object = {img, title, minPrice};
         this.cart.push(object);
