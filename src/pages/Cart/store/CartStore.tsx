@@ -3,6 +3,7 @@ import { makeObservable, observable, action } from "mobx";
 export class CartStore {
     cart: any;
     total: number;
+    margarita: number;
 
     constructor() {
         this.cart = [];

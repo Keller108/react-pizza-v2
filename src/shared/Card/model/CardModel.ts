@@ -1,10 +1,4 @@
-interface ICardProps {
-    img: any;
-    title: string;
-    minPrice: number;
-}
-
-export class CardModel {
+export class ProductModel {
     img: any;
     title: string;
     minPrice: number;
