@@ -1,9 +1,11 @@
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { CartItem } from '../../entities/CartItem/CartItem';
 import './Cart.css';
 import { EmptyCart } from './ui/EmptyCart/EmptyCart';
 
-export function Cart({cartStore}: any) {
+export function Cart({ cartStore }: any) {
+
     const emptyCart = () => {
         cartStore.clearCart();
     };
@@ -23,7 +25,15 @@ export function Cart({cartStore}: any) {
             <ul className="cart__item-container">
                 {cartStore.cart.length > 0 ? cartStore.cart.map(
                     //@ts-ignore
-                    item => <CartItem key={item.title} img={item.img} title={item.title} price={item.minPrice} />)
+                    item => <CartItem
+                                key={item.title}
+                                img={item.img}
+                                title={item.title}
+                                price={item.minPrice}
+                                dough={item.dough}
+                                size={item.size}
+                                cartStore={cartStore}
+                            />)
                     : 'Корзина пустая'
                 }
             </ul>

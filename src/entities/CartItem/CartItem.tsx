@@ -1,6 +1,12 @@
+import { observer } from 'mobx-react-lite';
 import './CartItem.css';
 
-export function CartItem({ img, title, price }: any) {
+export const CartItem = observer(({ img, title, price, dough, size, cartStore }: any) => {
+
+    const removeItem = () => {
+        cartStore.removeFromCart();
+    };
+
     return (
         <li className="cart-item">
             <div className="cart-item__content-wrapper">
@@ -10,7 +16,7 @@ export function CartItem({ img, title, price }: any) {
                         {title}
                     </h3>
                     <p className="cart-item__product-description">
-                            Тонкое тесто, 30 см
+                            {dough}, {size}
                     </p>
                 </div>
             </div>
@@ -31,8 +37,8 @@ export function CartItem({ img, title, price }: any) {
                 <p className="cart-item__price">
                     {price} ₽
                 </p>
-                <button className="cart-item__action-btn cart-item__action-btn_type_remove" type="button" aria-label="Remove item"/>
+                <button onClick={removeItem} className="cart-item__action-btn cart-item__action-btn_type_remove" type="button" aria-label="Remove item"/>
             </div>
         </li>
     )
-}
+});

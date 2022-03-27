@@ -31,7 +31,7 @@ const Card = observer(({img, title, minPrice, cartStore}:ICardProps) => {
 
     const addOneToCart = () => {
         setPizzaQuantity(pizzaQuantity + 1);
-        cartStore.addToCart({ img, title, minPrice });
+        cartStore.addToCart({ img, title, minPrice, dough: isDough, size: pizzaSize });
         cartStore.refreshTotal(minPrice);
     };
 

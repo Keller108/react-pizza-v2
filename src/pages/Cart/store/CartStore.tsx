@@ -16,21 +16,17 @@ export class CartStore {
             addToCart: action,
             refreshTotal: action,
             clearCart: action,
+            removeFromCart: action,
         })
     }
 
-    repetitionCheck(obj: {}) {
-        if (this.cart) {
-            let isRepeat = false;
-            this.cart.find(
-                //@ts-ignore
-                item => item.keys[0])
-        }
+    addToCart({img, title, minPrice, dough, size}: {img: any, title: string, minPrice: number, dough: string, size: string}) {
+        let object = {img, title, minPrice, dough, size};
+        this.cart.push(object);
     }
 
-    addToCart({img, title, minPrice}: {img: any, title: string, minPrice: number}) {
-        let object = {img, title, minPrice};
-        this.cart.push(object);
+    removeFromCart() {
+        console.log(this.cart);
     }
 
     refreshTotal(sum: number) {
