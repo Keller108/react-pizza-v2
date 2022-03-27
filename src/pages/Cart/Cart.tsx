@@ -39,7 +39,7 @@ export function Cart({ cartStore }: any) {
             </ul>
             <div className="cart__total-wrapper">
                 <p>Всего пицц: <span className="cart__total-amount">{cartStore.cart.length} шт.</span></p>
-                <p>Сумма заказа: <span className="cart__total-price">900 ₽</span></p>
+                <p>Сумма заказа: <span className="cart__total-price">{cartStore.total} ₽</span></p>
             </div>
             <ul className="cart__action-container">
                 <li className="cart__action-item">
