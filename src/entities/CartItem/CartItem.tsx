@@ -1,19 +1,11 @@
 import { observer } from 'mobx-react-lite';
-import { useEffect } from 'react';
 import './CartItem.css';
 
 export const CartItem = observer(({ img, title, price, dough, size, cartStore }: any) => {
 
-    let index = cartStore.cart.findIndex((item: any) => item.title = title);
-
     const removeItem = () => {
-        cartStore.removeFromCart(index, price);
-
+        cartStore.removeFromCart(title, price);
     };
-
-    useEffect(() => {
-        console.log(index);
-    });
 
     return (
         <li className="cart-item">

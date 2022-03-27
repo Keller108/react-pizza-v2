@@ -25,9 +25,9 @@ export class CartStore {
         this.cart.push(object);
     }
 
-    removeFromCart(pos: number, price: number) {
-        this.cart.splice(pos, 1);
-        this.total = this.total - price
+    removeFromCart(title: string, price: number) {
+        this.cart = this.cart.filter((item: any) => item.title !== title);
+        this.total = this.total - price;
     }
 
     refreshTotal(sum: number) {
