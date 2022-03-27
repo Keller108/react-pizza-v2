@@ -25,8 +25,8 @@ export class CartStore {
         this.cart.push(object);
     }
 
-    removeFromCart() {
-        console.log(this.cart);
+    removeFromCart(pos: number) {
+        this.cart.splice(pos, 1);
     }
 
     refreshTotal(sum: number) {

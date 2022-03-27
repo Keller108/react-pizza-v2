@@ -4,7 +4,8 @@ import './CartItem.css';
 export const CartItem = observer(({ img, title, price, dough, size, cartStore }: any) => {
 
     const removeItem = () => {
-        cartStore.removeFromCart();
+        let index = cartStore.cart.findIndex((item: any) => item.title = title);
+        cartStore.removeFromCart(index);
     };
 
     return (
