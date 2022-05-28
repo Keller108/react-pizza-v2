@@ -1,13 +1,13 @@
 import { useContext } from 'react';
 import { Filter } from '../../features/Filter/Filter';
 import Card from '../../shared/Card/Card';
-import { FilterContext } from '../../processes/FilterProcess';
+import { filterContext } from '../../processes/FilterProcess';
 import './Main.css';
 import { cardsList } from '../../shared/Card/const/cardsList';
 import { CartContext } from '../../processes/CartProcess';
 
 export function Main({ cartStore }: any) {
-    const { filterStore } = useContext(FilterContext);
+    const { filterStore } = useContext(filterContext);
 
     return (
         <main className="main">
